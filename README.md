@@ -62,4 +62,4 @@ This project is a simple Library Management System built with PHP. It allows use
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/repository-name.git
+   git clone https://github.com/makombelajob/FullLibrary.git
