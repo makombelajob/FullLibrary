@@ -1,0 +1,75 @@
+services:
+    apache:
+        image: php:8.5-apache
+        container_name: library_full_apache
+        build:
+            context: ./php
+        ports:
+            -   "8080:80"
+        volumes:
+            -   ./app:/var/www/html/
+        depends_on:
+            -   mysql
+
+    mysql:
+        image: mysql:8.0
+        container_name: library_full_mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: library1004
+            MYSQL_DATABASE: library
+            MYSQL_USER: johnny
+            MYSQL_PASSWORD: johnny7791
+        ports:
+            -   "3306:3306"
+        volumes:
+            -   ./mysql:/var/lib/mysql
+
+    phpmyadmin:
+        image: phpmyadmin
+        container_name: library_full_phpmyadmin
+        ports:
+            -   "8081:80"
+        environment:
+            PMA_HOST: mysql
+            PMA_PASSWORD: library1004
+        depends_on:
+            -   mysql
+
+    postgresql:
+        image: bitnami/postgresql
+        container_name: library_full_postgresql
+        environment:
+            POSTGRES_USER: user
+            POSTGRES_PASSWORD: password
+            POSTGRES_DB: library
+        ports:
+            - "5432:5432"
+        volumes:
+            - ./postgres:/bitnami/postgresql
+
+    pgadmin:
+        image: dpage/pgadmin4
+        container_name: pgadmin_library
+        environment:
+            PGADMIN_DEFAULT_EMAIL: admin@example.com
+            PGADMIN_DEFAULT_PASSWORD: admin
+        ports:
+            -   "8082:80"
+        depends_on:
+            -   postgresql
+
+    mail_hog:
+        image: mailhog/mailhog
+        container_name: library_full_library
+        logging:
+            driver: 'none'
+        ports:
+            -   "1025:1025"
+            -   "8025:8025"
+    
+    mongo:
+        image: mongo:latest
+        ports:
+            -   "27017:27017"
+        volumes:
+            -   ./mongo/:/data/db

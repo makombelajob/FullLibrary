@@ -1,0 +1,65 @@
+:root{
+    font-size: 15px;
+}
+
+body{
+    header{
+        font-size: 1.5rem;
+        background-color: lightblue;
+        margin-inline: 0.5rem;
+        padding-inline: 0.5rem;
+        border-radius: 10px 5px;
+        nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            ul{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 1rem;
+                list-style: none;
+                 li a{
+                     text-decoration: none;
+
+                 }
+            }
+        }
+    }
+    main{
+        .now-books,
+        .all-Books{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            article{
+                font-size: 1.5rem;
+                background-color: lightskyblue;
+                width: 50%;
+                margin: 1rem auto;
+                padding: 1rem;
+                border-radius: 0.375rem;;
+                box-shadow: 0 .125rem .25rem rgba(0, 0, 0, 0.075);
+                border: 1px solid rgba(0, 0, 0, 0.125);
+                h2{
+                    margin-bottom: 0.5rem;
+                    font-weight: 700;
+                }
+                p{
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+    footer{
+        text-align: center;
+        font-size: 1.5rem;
+        color: lightcyan;
+        background-color: lightslategray;
+        margin-inline: 0.5rem;
+        padding-inline: 0.5rem;
+        border-radius: 10px 5px;
+        p{
+            padding: 0.5rem;
+        }
+    }
+}
