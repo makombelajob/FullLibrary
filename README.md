@@ -45,7 +45,7 @@ This project is a simple Library Management System built with PHP. It allows use
 ---
 📸 Screenshot
 
-![Screenshot](assets/Screenshot.png)
+![Screenshot](app/assets/Screenshot.png)
 
 
 (Add a screenshot of your project here)
